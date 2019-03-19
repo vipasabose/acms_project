@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Collaborative Writing and Reviewing Tool</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+<!--===============================================================================================-->
+</head>
+<body class="bg">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     
+    <ul class="nav navbar-nav">
+      <li><a class="navbar-brand active" href="#projectList">Home</a> </li>
+      <li><a data-toggle="modal" data-target="#createProject">Create Project</a></li>
+      
+    </ul>
+    </div>
+
+  </div>
+</nav>
+<div class="container">
+<div id="projectList">
+  <h1>My Projects -</h1>
+  <br>
+  <ul class="list-group">
+    <li class="list-group-item " id="projects">
+        
+        
+          <div class="">
+            <label class="pname" id="projectName">
+              Project Name
+            </label>
+            
+            <br>
+             <div class="dropdown">
+               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Version
+               <span class="caret"></span></button>
+               <ul class="dropdown-menu">
+                   <li><a href="#" id="versions"> 1 </a></li>
+                   <li><a href="#">2</a></li>
+                   <li><a href="#">3 </a></li>
+               </ul>
+              </div> 
+              <br>
+
+            <button type="button" class="btn btn-secondary"> Read </button>
+            <button class="btn btn-dark"> Contribute </button>
+          </div>
+
+
+    </li>
+  </ul>
+</div>
+
+<div id="createProject" class="modal fade " role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Create Project</h3>
+      </div>
+      <div class="modal-body">
+         <form action="" class="container-fluid myform">
+          <div class="form-group">
+             <label>Project Name</label>
+             <input type="text" class="form-control" id="projectName">
+          </div>
+        <div class="form-group">
+            <label>Contributors</label>
+            <input type="text" class="form-control" id="contributors">
+        </div>
+         <div class="form-group">
+            <label>Reviewer</label>
+            <input type="text" class="form-control" id="reviewer">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" >Submit</button>
+         <br>
+        </form> 
+      </div>
+ 
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+<!--===============================================================================================-->
+	
+	<script src="js/main.js"></script>
+
+</body>
+</html>
