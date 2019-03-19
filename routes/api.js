@@ -1,9 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser')
-var login = require('../modules/login');
+var login = require('../modules/Registration');
 var router = express.Router();
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 //router.set('view engine','jsx');
 
 
