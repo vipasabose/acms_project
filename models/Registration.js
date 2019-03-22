@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const registrationSchema = new mongoose.Schema({
     email:  String,
@@ -10,7 +11,16 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-    //isReviewer: Boolean
+    isReviewer: Boolean
 
 });
+
+registrationSchema.methods.generateHash = function(pswd){
+  return bcrypt.hashSync(pswd,bcryt.genSaltSync(8),null);
+}
+
+registrationSchema.methods.validPassword = function (pswd) {
+  return bcrypt.compareSync(pswd,this.pswd);
+}
+
 module.exports = mongoose.model('Registration', registrationSchema);

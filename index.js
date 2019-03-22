@@ -5,12 +5,17 @@ var expressSession = require('express-session');
 var bodyParser = require('body-parser');
 require('dotenv').config();
 var mongoose = require('mongoose');
-var routes = require('./routes/api');
+
+
+var routes = require('./routes/api/login');
+var routes = require('./routes/api/createuser');
+var routes = require('./routes/api/verify');
+var routes = require('./routes/api/logout');
 
 //setup express app
 var app = express();
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'js');
 //connect to mongo db
 mongoose.connect(process.env.DATABASE, { useMongoClient: true });
 mongoose.Promise = global.Promise;
@@ -23,6 +28,7 @@ mongoose.connection
   });
 //require('./models/product');
 //require('./models/user');
+app.use(express.static('views'));
 
 app.use(expressValidator());
 app.use(expressSession({secret : 'max', saveUninitialized: false, resave: false}));
